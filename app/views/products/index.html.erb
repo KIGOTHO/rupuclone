@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+   
+  
+<div class="thead">
+
+  <thead>
+       <% content_for :menu do %>
+
+    <% @products.each do |product| %>
+      <tr>
+          <td><h1><%=link_to product.title, product %></h1></td>
+<!--
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->
+      </tr>
+    <% end %>
+    <% end %>
+          </thead>
+  </div>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>

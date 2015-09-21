@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+  
+ <% content_for :menu do %>
+       <% @products.each do |product| %>
+      <tr>
+          <td><h1><%=link_to product.title, product %></h1></td>
+      </tr>
+    <% end %>
+    <% end %>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
