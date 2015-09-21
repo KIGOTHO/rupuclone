@@ -1,0 +1,32 @@
+<h3>new Item</h3>
+<%= form_for [ @product, @item ] do |f| %>
+  <p>
+      <%= f.label :title %><br/>
+      <%= f.text_field :title %>
+  </p>
+<p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </p>
+  
+  
+<p>
+    <%= f.label :image_url %><br/>
+    <%= f.text_field :image_url %>
+  </p>
+ <p>
+     <%= f.label :price_from %><br/>
+     <%= f.text_field :price_from %>
+  </p>
+ <p>
+     <%= f.label :price_to %><br/>
+     <%= f.text_field :price_to %>
+  </p> <p>
+     <%= f.label :price_save %><br/>
+     <%= f.text_field :price_save %>
+  </p>
+ 
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
