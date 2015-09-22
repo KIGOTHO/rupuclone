@@ -1,5 +1,5 @@
 <div>
     <h4><%= item.title %></h4>
     <p><%=item.description%></p>
-
+    <td><%= button_to "Add to Cart", order_items_path(item_id: item.id) %></td>
 </div>
