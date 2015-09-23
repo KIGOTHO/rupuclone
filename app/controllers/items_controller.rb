@@ -1,14 +1,14 @@
 class ItemsController < ApplicationController
 #    before_action :set_item, only: [:show, :edit, :update, :destroy]    
 #    
-#     def index
-#         @items = Item.all
-#  end
+     def index
+         @items = Item.all
+  end
 #    
 #    
-#     def new
-#         @item = Item.new
-#  end
+     def new
+         @item = Item.new
+  end
 #    
 #    
 #    
@@ -23,32 +23,7 @@ class ItemsController < ApplicationController
         redirect_to product_path(@item.product)
      end
     
-#     def create
-#        @comment = Comment.new(comment_params)
-#        @comment.article_id = params[:article_id]
-#        
-#        @comment.save
-#        redirect_to article_path(@comment.article)
-#    end
-#    
-#    
-#    
-#    
-#    
-#    
-#      # GET /items/new
-# 
-#
-#  # GET /items/1/edit
-#  def edit
-#  end
-#
-#    
-#    def show
-#        @items = Item.all
-#    end
-    
-#
+
 #
 #      # POST /items
 #  # POST /items.json
@@ -88,21 +63,33 @@ class ItemsController < ApplicationController
 #
 #
 #
- def destroy
+# def destroy
+#    @item.destroy
+#    respond_to do |format|
+#        format.html { redirect_to products_url, notice: 'item was successfully     destroyed.' }
+#      format.json { head :no_content }
+#    end
+#  end
+    
+
+    
+def destroy
+    @product = Product.find(params[:product_id])
+    @item = @product.items.find(params[:id])
     @item.destroy
     respond_to do |format|
-        format.html { redirect_to products_url, notice: 'item was successfully     destroyed.' }
+        format.html { redirect_to product_path(@product), notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 #    
 #    
-#    
-#private
-#def set_item
-#    @item = Item.find(params[:id])
-#    end
+private
+def set_item
+    @item = Item.find(params[:id])
+    end
 #
+    
 #    
 def item_params
     params.require(:item).permit(:title, :description, :price_to, :price_from, :price_save, :image_url)
