@@ -3,8 +3,8 @@ class OrderItemsController < ApplicationController
   before_action :set_order_item, only: [:show, :edit, :update, :destroy]
 
   def create
-#      @order_item = @order.order_items.new(quantity: 1, item_id: params[:item_id])
-      @order_item = OrderItem.new(item_id: params[:item_id], order_id: @order.id)
+      @order_item = @order.order_items.new(quantity: 1, item_id: params[:item_id])
+#      @order_item = OrderItem.new(item_id: params[:item_id], order_id: @order.id)
     respond_to do |format|
       if @order_item.save
           format.html { redirect_to @order, notice: 'Successfully added product to cart.' }

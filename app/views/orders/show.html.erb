@@ -27,11 +27,8 @@
     <td><%= item.item.title %></td>
 <td><%= item.quantity %></td>    
     <td><%= print_price(item.item.price_to) %></td>    
-<td><%=  print_price(item.subtotal)  %></td>
+       <td><%=  print_price(item.subtotal)  %></td>
         <td><%= link_to "Remove", item, method: :delete%></td>
-
-
-    
 </tr>
    
 
@@ -40,13 +37,10 @@
 <% end %>
     <br>
     <tr>
-        <td><%= @order.total %></td>
-
-
         <td><%= link_to "Empty Cart", @order, data: { confirm: 'Are you sure?' }, method: :delete %></td>
 <!--                <td><%= button_to "submit" %></td>-->
-
     </tr>   
 
-
+<th>OrderTotal:</th>
+        <td><%= @order.total %></td>
 </table>
