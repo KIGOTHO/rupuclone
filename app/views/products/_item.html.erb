@@ -1,10 +1,16 @@
 <div id="items_ground">
-    <p class="pimage"><%= image_tag "items/#{item.image_url}" %></p>
-    <h4><%= item.title %></h4>
-    <p class="p1"><%= print_price(item.price_from) %></p>
-    <p class="p1"><%= print_price(item.price_to) %></p>
-    <p class="p1"><%= print_price(item.price_save) %></p>
-    <p class="p1"><%=item.description %></p>
-    <p><%= link_to 'Delete', product_item_path(@product,item), method: :delete%></p>
-    <p class="p1"><%= button_to "Add to Cart", order_items_path(item_id: item.id) %></p>
+    <h5 class="pimage"><%= image_tag "items/#{item.image_url}" %></h5>
+    <div class="leftdetails">
+    <h3><%= item.title %></h3>
+    <h5 class=""><%=item.description %></h5>
+    <h4 class="p_from"><%= print_price(item.price_from) %></h4>
+    <h4 class="p_to"><%= print_price(item.price_to) %></h4>
+    <h4 class="p_save"><h7>save</h7><%= print_price(item.price_save) %></h4>
+            </div>
+        <div class="rightdetails">
+
+
+   <%= link_to 'Delete', product_item_path(@product,item), method: :delete%>
+   <%= button_to "BUY", order_items_path(item_id: item.id) %>
+    </div>
 </div>

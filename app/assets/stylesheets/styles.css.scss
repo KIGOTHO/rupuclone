@@ -1,24 +1,15 @@
-
     h1{display:inline;
-//      font-size: 20px;
         margin: 30px;
     }
 
-#items_ground{background-color: yellow;
+#items_ground{
        float: left;
        width: 350px;
-      height: 300px;
+      height: 360px;
       margin: 25px;
       
     }
-
-
-.form{float: right;}
-
-.p1{float: left;}
-
-
-
+.form{clear: both;}
 
 header{
     width: 100%;
@@ -27,18 +18,32 @@ header{
 }
 
 .list{display: inline;}
-.destroy{clear: both;}
 
-#p_to{display:inline;
-      font-size: 20px;
+.p_to{display:inline;
+      font-size: 18px;
       color: green;
     }
-#p_from{display:inline;
-      font-size: 20px;
-      color: red;
+.p_from{display:inline;
+      font-size: 10px;
+      color:gray;
      
     }
-#p_save{display:inline;
-      font-size: 20px;
-      color: white;
+.p_save{display:inline;
+      font-size: 15px;
+      color:orange;
     }
+h5{margin: 0 0;
+padding: 0 0;}
+
+h4{margin: 0 0;
+    float: left;
+padding: 0 0;}
+h7{font-size: 12px;}
+
+.leftdetails{width: 280px;
+        float: left;
+             }
+
+.rightdetails{
+            margin: 0 0;
+            float: right;}
