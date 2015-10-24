@@ -5,8 +5,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
          @products = Product.all
-      
-
   end
 
   # GET /products/1
@@ -14,8 +12,7 @@ class ProductsController < ApplicationController
   def show
       @products = Product.all
       @item = Item.new
-      @item.product_id = @product.id
-      
+      @item.product_id = @product.id 
   end
 
   # GET /products/new

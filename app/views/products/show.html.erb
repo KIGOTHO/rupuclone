@@ -1,12 +1,14 @@
-<p id="notice"><%= notice %></p>
-   <% content_for :menu do %>
-       <% @products.each do |product| %>
+<header>
+
+<% @products.each do |product| %>
       <tr>
           <td><h1><%=link_to product.title, product %></h1></td>
           
       </tr>
     <% end %>
-    <% end %>
+        </header>
+
+<p id="notice"><%= notice %></p>
 
 <h3>Items (<%= @product.items.size %>)</h3>
 

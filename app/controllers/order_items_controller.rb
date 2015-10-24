@@ -3,10 +3,10 @@ class OrderItemsController < ApplicationController
   before_action :set_order_item, only: [:show, :edit, :update, :destroy]
 
   def create
-      @order_item = @order.order_items.new(quantity: 1, item_id: params[:item_id])
-#      @order_item = OrderItem.new(item_id: params[:item_id], order_id: @order.id)
-    respond_to do |format|
-      if @order_item.save
+
+      @order_item = OrderItem.new(item_id: params[:item_id], order_id: @order.id)
+          respond_to do |format|
+          if @order_item.save
           format.html { redirect_to @order, notice: 'Successfully added product to cart.' }
           format.json { render :show, status: :created, location: @order_item }
       else
@@ -66,4 +66,5 @@ end
     def order_item_params
         params.require(:order_item).permit(:item_id, :order_id, :quantity)
     end
+ 
 end
