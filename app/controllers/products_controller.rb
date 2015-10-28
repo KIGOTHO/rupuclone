@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+    before_filter :require_login, only: [:destroy]
 
   # GET /products
   # GET /products.json
   def index
          @products = Product.all
+#      redirect_to  products
   end
 
   # GET /products/1

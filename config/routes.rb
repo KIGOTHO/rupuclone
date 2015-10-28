@@ -5,15 +5,23 @@ Rails.application.routes.draw do
         resources :items
     end  # The priority is based upon order of creation: first created -> highest priority.
         resources :items 
+    
+    resources :admins
+    
+    resources :admin_sessions, only: [ :new, :create, :destroy ]
+
+get 'login'  => 'admin_sessions#new'
+get 'logout' => 'admin_sessions#destroy'
+
 
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
 
-    root 'products#index'
-
+#    root 'products#index'
+    root :to => "products#show", :id => '4'
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+#     get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

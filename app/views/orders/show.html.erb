@@ -25,10 +25,10 @@
 <tr>
     <td><%= image_tag "items/#{item.item.image_url}" %></td>
     <td><%= item.item.title %></td>
-<td><%= item.quantity %></td>    
+<td class="disp"><%= item.quantity %></td>    
     <td><%= print_price(item.item.price_to) %></td> 
        <td class="disp"><%=  print_price(item.subtotal)  %></td>
-        <td><%= link_to "Remove", item, method: :delete%></td>
+        <td><%= link_to "Remove", item, method: :delete,class: 'alink'%></td>
 </tr>
    
 
@@ -41,6 +41,8 @@
 <!--                <td><%= button_to "submit" %></td>-->
     </tr>   
 
-<th>OrderTotal:</th>
-        <td><%= @order.total %></td>
+<th class="total">OrderTotal:</th>
+        <td class="total"><%=  print_price(@order.total) %></td>
+    <td><%= link_to "Submit", products_path, class: 'alink'%></td>
+    <td><%= link_to "Back", products_path, class: 'alink'%></td>
 </table>

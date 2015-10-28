@@ -9,8 +9,11 @@
             </div>
         <div class="rightdetails">
 
-
+<% if logged_in? %>
    <%= link_to 'Delete', product_item_path(@product,item), method: :delete%>
+
+<% end %>
+
    <%= button_to "BUY", order_items_path(item_id: item.id) %>
     </div>
 </div>

@@ -10,8 +10,10 @@
 
 <p id="notice"><%= notice %></p>
 
-<h3>Items (<%= @product.items.size %>)</h3>
+<% if logged_in? %>
 
+<h3>Items (<%= @product.items.size %>)</h3>
+<% end %>
 
 <%= render partial: 'products/item', collection: @product.items %>
 

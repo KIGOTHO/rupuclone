@@ -8,11 +8,32 @@
 
 </head>
 <body>
+    
+      <p class="flash">
+    <%= flash.notice %>
+  </p>
+  <div id="container">
+    <div id="content">
+      <h6>
+        <% if logged_in? %>
+          <%= "Logged in as #{current_user.email}" %>
+          <%= link_to "(logout)", logout_path, class: 'alink' %>
+        <% else %>
+          <%= link_to "(login)", login_path, class: 'alink' %>
+        <% end %>
+      <r class='log'>cc CreativesWe  org</r>
+      </h6>
+              <hr>
+
+    </div>
+  </div>
+    
  <main>
     <% content_for(:banner) do %>    
     <% end %>  
     </main>
     
 <%= yield %>
+    
 </body>
 </html>
