@@ -18,8 +18,8 @@ get 'logout' => 'admin_sessions#destroy'
 
   # You can have the root of your site routed with "root"
 
-#    root 'products#index'
-    root :to => "products#show", :id => '4'
+    root 'products#index'
+#    root :to => "products#show", :id => '4'
   # Example of regular route:
 #     get 'products/:id' => 'catalog#view'
 
