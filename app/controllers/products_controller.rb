@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
          @products = Product.all
-#      redirect_to  products
   end
 
   # GET /products/1
