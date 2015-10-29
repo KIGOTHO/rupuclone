@@ -1,4 +1,7 @@
 
+
+
+<% if logged_in? %>
 <h3>new Item</h3>
 
 <%= form_for [ @product, @item ] do |f| %>
@@ -44,4 +47,5 @@
   <p>
     <%= f.submit 'Submit' %>
   </p>
+<% end %>
 <% end %>
